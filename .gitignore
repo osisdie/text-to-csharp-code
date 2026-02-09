@@ -62,6 +62,8 @@ htmlcov/
 # IDE
 .claude/settings.local.json
 .vscode/
+!.vscode/
+!.vscode/launch.json
 .idea/
 *.swp
 *.swo

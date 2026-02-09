@@ -1,5 +1,6 @@
 using System.CommandLine;
 using System.CommandLine.Invocation;
+using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -7,6 +8,8 @@ using TextToCode.Application.DependencyInjection;
 using TextToCode.Application.Services;
 using TextToCode.Console.Commands;
 using TextToCode.Infrastructure.DependencyInjection;
+
+Console.OutputEncoding = Encoding.UTF8;
 
 var configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())

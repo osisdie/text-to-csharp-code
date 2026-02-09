@@ -106,6 +106,12 @@ SignalR events:
 - `ProgressUpdate` (streamed status)
 - `GenerationComplete` (final response)
 
+## Screenshots
+
+![Console REPL Example](docs/console-repl.svg)
+
+![Pipeline Flow](docs/pipeline-flow.svg)
+
 ## Tests
 
 ```

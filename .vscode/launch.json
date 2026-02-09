@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "TextToCode WebApi (Debug)",
+      "type": "coreclr",
+      "request": "launch",
+      "project": "${workspaceFolder}/src/TextToCode.WebApi/TextToCode.WebApi.csproj",
+      "cwd": "${workspaceFolder}/src/TextToCode.WebApi",
+      "console": "integratedTerminal",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    {
+      "name": "TextToCode Console (Debug)",
+      "type": "coreclr",
+      "request": "launch",
+      "project": "${workspaceFolder}/src/TextToCode.Console/TextToCode.Console.csproj",
+      "cwd": "${workspaceFolder}/src/TextToCode.Console",
+      "console": "integratedTerminal",
+      "stopAtEntry": false
+    }
+  ]
+}
