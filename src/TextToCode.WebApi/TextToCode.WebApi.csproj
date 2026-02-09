@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextToCode.Application\TextToCode.Application.csproj" />
+    <ProjectReference Include="..\TextToCode.Infrastructure\TextToCode.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

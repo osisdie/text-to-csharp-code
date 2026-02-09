@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TextToCode.Application/TextToCode.Application.csproj" />
+    <Project Path="src/TextToCode.Console/TextToCode.Console.csproj" />
+    <Project Path="src/TextToCode.Core/TextToCode.Core.csproj" />
+    <Project Path="src/TextToCode.Infrastructure/TextToCode.Infrastructure.csproj" />
+    <Project Path="src/TextToCode.WebApi/TextToCode.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TextToCode.Application.Tests/TextToCode.Application.Tests.csproj" />
+    <Project Path="tests/TextToCode.Core.Tests/TextToCode.Core.Tests.csproj" />
+    <Project Path="tests/TextToCode.Infrastructure.Tests/TextToCode.Infrastructure.Tests.csproj" />
+  </Folder>
+</Solution>
