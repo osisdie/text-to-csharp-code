@@ -14,6 +14,11 @@ builder.Services.AddSwaggerGen(c =>
 });
 builder.Services.AddSignalR();
 
+if (builder.Environment.IsDevelopment())
+{
+    builder.Configuration.AddJsonFile("appsettings.Development.json", optional: true);
+}
+
 builder.Services.AddTextToCodeApplication(builder.Configuration);
 builder.Services.AddTextToCodeInfrastructure(builder.Configuration);
 
