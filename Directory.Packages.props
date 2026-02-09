@@ -12,6 +12,8 @@
     <PackageVersion Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
     <!-- Web -->
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="7.3.1" />
+    <!-- SignalR Client -->
+    <PackageVersion Include="Microsoft.AspNetCore.SignalR.Client" Version="10.0.0-preview.1.25120.3" />
     <!-- DI / Config -->
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0-preview.1.25080.5" />
     <PackageVersion Include="Microsoft.Extensions.Options" Version="10.0.0-preview.1.25080.5" />

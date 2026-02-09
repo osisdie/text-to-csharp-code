@@ -22,9 +22,32 @@ Key patterns:
 - Strategy: swappable `ILlmClient`, `ICodeCompiler`
 - Visitor: `DangerousApiWalker`
 - Pipeline: self-healing loop
-- Observer: `IProgress<T>`
+- Observer: `IProgress<T>` / `Progress<T>` (see below)
 - Options pattern
 - Collectible `AssemblyLoadContext` for sandboxed execution
+
+### Observer Pattern — `IProgress<T>` / `Progress<T>`
+
+The pipeline reports real-time progress through .NET's built-in `IProgress<PipelineProgressUpdate>` interface. This decouples the pipeline from any specific UI or transport — the pipeline never knows *who* is listening, only that it can report status.
+
+Each presentation layer provides its own `Progress<T>` callback:
+
+```
+CodeGenerationPipeline.ExecuteAsync(prompt, ..., IProgress<T> progress)
+        │
+        ├── Console REPL
+        │     new Progress<T>(update => ConsoleRenderer.RenderProgressUpdate(update))
+        │     → Spectre.Console markup output to terminal
+        │
+        ├── SignalR Hub
+        │     new Progress<T>(async update => await Clients.Caller.SendAsync("ProgressUpdate", update))
+        │     → real-time push to connected browser/client
+        │
+        └── (extensible) — add any new consumer without modifying the pipeline
+              e.g. logging, file output, webhooks, message queues...
+```
+
+This means adding a new output channel (e.g. a Blazor UI, a gRPC stream, or a log sink) requires zero changes to the Application or Infrastructure layers — just wire up a new `Progress<T>` callback at the presentation boundary.
 
 ## Solution Structure
 
@@ -35,6 +58,7 @@ Projects in `TextToCode.slnx`:
 - Infrastructure: `TextToCode.Infrastructure` (Roslyn compiler, safety validator, sandbox, OpenRouter client)
 - Presentation: `TextToCode.Console` (CLI + REPL)
 - Presentation: `TextToCode.WebApi` (REST API + SignalR + Swagger)
+- Tooling: `TextToCode.SignalRClient` (CLI test client for SignalR hub)
 - Tests: `TextToCode.Core.Tests`, `TextToCode.Application.Tests`, `TextToCode.Infrastructure.Tests`
 
 ## Prerequisites

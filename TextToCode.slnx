@@ -4,6 +4,7 @@
     <Project Path="src/TextToCode.Console/TextToCode.Console.csproj" />
     <Project Path="src/TextToCode.Core/TextToCode.Core.csproj" />
     <Project Path="src/TextToCode.Infrastructure/TextToCode.Infrastructure.csproj" />
+    <Project Path="src/TextToCode.SignalRClient/TextToCode.SignalRClient.csproj" />
     <Project Path="src/TextToCode.WebApi/TextToCode.WebApi.csproj" />
   </Folder>
   <Folder Name="/tests/">
