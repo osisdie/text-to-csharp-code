@@ -14,9 +14,7 @@ AI-powered C# code generation engine with a self-healing pipeline that validates
 
 Pipeline flow:
 
-User Prompt -> Generate (LLM) -> Validate (AST walker) -> Compile (Roslyn) -> Execute (sandbox)
-    ^                                                                |
-    |----------------- on error: feed diagnostics back --------------|
+![Pipeline Flow](docs/pipeline-flow.svg)
 
 Key patterns:
 - Strategy: swappable `ILlmClient`, `ICodeCompiler`
@@ -134,7 +132,11 @@ SignalR events:
 
 ![Console REPL Example](docs/console-repl.svg)
 
-![Pipeline Flow](docs/pipeline-flow.svg)
+**Example1: Hello World**
+![Example1: Hello World](docs/example-hello-world.png)
+
+**Example2: Selection Sort**
+![Example2: Selection Sort](docs/example-selection-sort.png)
 
 ## Tests
 
